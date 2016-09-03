@@ -27,7 +27,7 @@ from pydruid.utils.query_utils import UnicodeWriter
 try:
     import pandas
 except ImportError:
-    print('Warning: unable to import Pandas. The export_pandas method will not work.')
+    # print('Warning: unable to import Pandas. The export_pandas method will not work.')
     pass
 
 
@@ -363,7 +363,7 @@ class QueryBuilder(object):
         query_type = 'select'
         valid_parts = [
             'datasource', 'granularity', 'filter', 'dimensions', 'metrics',
-            'paging_spec', 'intervals'
+            'paging_spec', 'intervals', 'descending'
         ]
         self.validate_query(query_type, valid_parts, args)
         return self.build_query(query_type, args)
