@@ -18,6 +18,14 @@ from six import iteritems
 from .filters import Filter
 
 
+def longmax(raw_metric):
+        return {"type": "longMax", "fieldName": raw_metric}
+
+
+def doublemax(raw_metric):
+    return {"type": "doubleMax", "fieldName": raw_metric}
+
+
 def longsum(raw_metric):
     return {"type": "longSum", "fieldName": raw_metric}
 
